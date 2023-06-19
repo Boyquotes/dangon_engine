@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnqa2a5ousit6"]
+
+[ext_resource type="PackedScene" path="res://core/player/player.tscn" id="1_57jbl"]
+[ext_resource type="Texture2D" uid="uid://b1psjwj5sdd8l" path="res://game/assets/characters/monika/stand.tres" id="2_jvdig"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1t0sy"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wuguw"]
+points = PackedVector3Array(-5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, 5)
+
+[node name="Level" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_1t0sy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wuguw")
+
+[node name="Player" parent="." instance=ExtResource("1_57jbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62907, -5)
+pixel_size = 0.003
+billboard = 2
+texture = ExtResource("2_jvdig")

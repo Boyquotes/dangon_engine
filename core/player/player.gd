@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if mouse_captured:
 		camera.rotation.y -= look_dir.x * delta
-		camera.rotation.x = clamp(camera.rotation.x - look_dir.y * delta, -1.5, 1.5)
+		#camera.rotation.x = clamp(camera.rotation.x - look_dir.y * delta, -1.5, 1.5)
 		look_dir = Vector2.ZERO
 	velocity = walk() + _gravity(delta)
 	move_and_slide()

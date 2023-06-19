@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://dnrlya66rbca6"]
+
+[ext_resource type="Script" path="res://core/character/character.gd" id="1_8rkmi"]
+[ext_resource type="Texture2D" uid="uid://b1psjwj5sdd8l" path="res://game/assets/characters/monika/stand.tres" id="1_xqnrj"]
+
+[resource]
+script = ExtResource("1_8rkmi")
+name = "Monika"
+images = Array[Texture]([ExtResource("1_xqnrj")])
